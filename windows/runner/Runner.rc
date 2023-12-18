@@ -93,9 +93,9 @@ BEGIN
             VALUE "FileDescription", "dexterstt" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "dexterstt" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.bynarr.dexterstt. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.bynarr.dexterstt. All rights reserved." "\0"
             VALUE "OriginalFilename", "dexterstt.exe" "\0"
-            VALUE "ProductName", "dexterstt" "\0"
+            VALUE "ProductName", "DexterSTT" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
