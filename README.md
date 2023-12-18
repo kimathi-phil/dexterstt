@@ -23,7 +23,7 @@ I decided to go with the alternative task due to time constraints. If I'll manag
 ---
 The different tasks undertaken can be referenced from the other project branches:
 - [feat/layout](https://github.com/kimathi-phil/dexterstt/tree/feat/layout) branch: For layout related tasks (design work, state management)
-- [feat/layout](https://github.com/kimathi-phil/dexterstt/tree/feat/data-layer) branch: For data related tasks (network calls, data persistence, recorder)
+- [feat/data-layer](https://github.com/kimathi-phil/dexterstt/tree/feat/data-layer) branch: For data related tasks (network calls, data persistence, recorder)
 - [feat/business-logic](https://github.com/kimathi-phil/dexterstt/tree/feat/business-logic) branch: For all the project's business logic (contracts, entities, usecases)
 - [ci](https://github.com/kimathi-phil/dexterstt/tree/ci) branch: For CI/CD related tasks
 
@@ -63,3 +63,6 @@ Run the project:
 ```sh
 $ flutter run
 ```
+---
+
+[APK Download](https://github.com/kimathi-phil/dexterstt/blob/main/dexterstt.apk)
