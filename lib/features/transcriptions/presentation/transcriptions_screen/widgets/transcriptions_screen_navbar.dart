@@ -8,30 +8,20 @@ class TranscriptionsScreenNavbar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            const SizedBox(
-              height: size * 5.0,
-              width: size * 5.0,
-              child: CircleAvatar(
-                backgroundColor: kPrimaryColor,
-                child: Icon(Icons.person_2_rounded),
-              ),
-            ),
-            SizedBox(width: size + 4),
-            Text(
-              'Eren',
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineMedium!
-                  .apply(color: kBlackColor800),
-            ),
-          ],
+        const SizedBox(
+          height: size * 5.0,
+          width: size * 5.0,
+          child: CircleAvatar(
+            backgroundColor: kPrimaryColor,
+            child: Icon(Icons.person_2_rounded),
+          ),
         ),
-        SizedBox(
-          width: size * 4,
-          height: size * 4,
-          child: Icon(Icons.more_vert_sharp),
+        Text(
+          'Eren ',
+          style: Theme.of(context)
+              .textTheme
+              .headlineMedium!
+              .apply(color: kBlackColor800),
         ),
       ],
     );

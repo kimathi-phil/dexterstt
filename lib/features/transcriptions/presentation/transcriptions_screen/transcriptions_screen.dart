@@ -3,21 +3,24 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:record/record.dart';
+import 'package:shimmer/shimmer.dart';
 
+import '../../../../config/assets/assets.dart';
 import '../../../../config/config.dart';
 import '../../../../config/di/di.dart';
 import '../../../../l10n/l10n.dart';
 import '../../../shared/data/recorder/recorder.dart';
 import '../../domain/entities/entities.dart';
 import '../../transcripts.dart';
+part 'widgets/transcriptions_mic_button.dart';
 
 part 'widgets/empty_transcriptions_widget.dart';
 part 'widgets/loading_transcriptions_widget.dart';
-part 'widgets/transcription.dart';
+part 'widgets/transcription_card.dart';
 part 'widgets/transcription_list.dart';
-part 'widgets/transcriptions_api_counter.dart';
-part 'widgets/transcriptions_notes.dart';
 part 'widgets/transcriptions_screen_navbar.dart';
+part 'widgets/transcriptions_counter.dart';
 
 class TranscriptsScreen extends StatelessWidget {
   const TranscriptsScreen({super.key, required this.path});
@@ -26,6 +29,7 @@ class TranscriptsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final l10n = context.l10n;
     return BlocProvider(
       create: (context) => getIt<TranscriptsCubit>()..getAllTranscripts(path),
       child: Scaffold(
@@ -40,14 +44,26 @@ class TranscriptsScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: size * 2),
                   const TranscriptionsScreenNavbar(),
-                  const TranscriptionsNotes(),
-                  TranscriptionsCounter(),
                   const SizedBox(height: size + 4),
                   const TranscriptionsList(),
                   const SizedBox(height: size * 2),
                 ],
               ),
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          height: MediaQuery.of(context).size.height / 2,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TranscriptionsCounter(),
+              TranscriptionsMicButton(
+                iconData: Icons.mic,
+                title: 'Always Listening',
+                onBtnSelected: () {},
+              ),
+            ],
           ),
         ),
       ),

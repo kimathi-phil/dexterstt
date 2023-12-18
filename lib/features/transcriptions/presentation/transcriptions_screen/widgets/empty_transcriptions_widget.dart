@@ -12,7 +12,9 @@ class EmptyTranscriptionsWidget extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: 'There are no transcripts at the moment',
-            style: Theme.of(context).textTheme.titleSmall!,
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: kGreyColor900,
+                ),
           ),
         ),
         SizedBox(height: size * 2),

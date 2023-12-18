@@ -12,15 +12,27 @@ class LoadingTranscriptionsWidget extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: 'Loading transcripts..',
-            style: Theme.of(context).textTheme.titleSmall!,
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: kGreyColor900,
+                ),
           ),
         ),
         SizedBox(height: size * 2),
         Center(
           child: Container(
-            width: size * 4.0,
-            height: size * 4.0,
-            child: CircularProgressIndicator(color: kGreyColor900),
+            constraints: const BoxConstraints(
+              minWidth: size * 12.0,
+              minHeight: size * 4.0,
+              maxWidth: size * 15.0,
+              maxHeight: size * 10.0,
+            ),
+            child: Shimmer.fromColors(
+              baseColor: kPrimaryColor,
+              highlightColor: kGreyColor500,
+              child: Image.asset(
+                ImageAssets.logo,
+              ),
+            ),
           ),
         ),
       ],

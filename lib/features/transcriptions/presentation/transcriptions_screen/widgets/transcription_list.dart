@@ -5,7 +5,6 @@ class TranscriptionsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
     return BlocBuilder<TranscriptsCubit, TranscriptsState>(
       builder: (context, state) {
         if (state is TranscriptsSuccess) {
@@ -15,11 +14,13 @@ class TranscriptionsList extends StatelessWidget {
                   children: [
                     RichText(
                       text: TextSpan(
-                        text: l10n.transcriptsTitle,
-                        style: Theme.of(context).textTheme.titleSmall!,
+                        text: 'Last STT transcripts',
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                              color: kGreyColor900,
+                            ),
                       ),
                     ),
-                    const SizedBox(height: size),
+                    const SizedBox(height: size * 2),
                     ListView.separated(
                       separatorBuilder: (context, index) =>
                           const SizedBox(height: size * 2),
@@ -29,7 +30,7 @@ class TranscriptionsList extends StatelessWidget {
                           ? state.transcriptions.length
                           : 3,
                       itemBuilder: (BuildContext context, int index) {
-                        return TranscriptionText(
+                        return TranscriptionCard(
                             transcript: state.transcriptions[index]);
                       },
                     ),

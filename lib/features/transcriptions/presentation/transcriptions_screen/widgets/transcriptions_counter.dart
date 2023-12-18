@@ -7,7 +7,7 @@ class TranscriptionsCounter extends StatefulWidget {
 
 class _TranscriptionsCounterState extends State<TranscriptionsCounter> {
   double progress = 0.0;
-  late int startTime = 00;
+  late int startTime = 0;
   late int elapsedTime = 0;
   late int counter = 0;
   Timer? timer;
@@ -46,7 +46,6 @@ class _TranscriptionsCounterState extends State<TranscriptionsCounter> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
     return BlocListener<TranscriptsCubit, TranscriptsState>(
       listener: (context, state) {
         if (state is TranscriptsSuccess) {
@@ -70,21 +69,43 @@ class _TranscriptionsCounterState extends State<TranscriptionsCounter> {
           }
         }),
         builder: (context, snapshot) {
+          final seconds = (elapsedTime ~/ 1000);
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: size * 8),
                 Text(
-                  l10n.counterText1,
-                  style: Theme.of(context).textTheme.titleSmall!,
+                  "API call counter",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        color: kGreyColor900,
+                      ),
                 ),
-                SizedBox(height: size / 4),
+                SizedBox(height: size / 2),
                 Text(
-                  counter < 10 ? "0$counter" : "$counter",
-                  style: Theme.of(context).textTheme.displayLarge!,
+                  "$counter",
+                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                        color: kPrimaryColor,
+                      ),
                 ),
-                SizedBox(height: size * 6),
+                SizedBox(height: size),
+                Text(
+                  "Recording time: ${seconds} secs",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        color: kGreyColor900,
+                      ),
+                ),
+                SizedBox(height: size / 2),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 6,
+                  height: size,
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    valueColor: AlwaysStoppedAnimation<Color>(kPrimaryColor),
+                    backgroundColor: kGreyColor900,
+                    borderRadius:
+                        const BorderRadius.all(Radius.circular(size * 6)),
+                  ),
+                ),
               ],
             ),
           );
