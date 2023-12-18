@@ -31,7 +31,9 @@ The different tasks undertaken can be referenced from the other project branches
 
 - [ ] Refactor audio listening natively using .kt and platform channels
 - [ ] Refine persistence layer (noticed some strange behavior with the data structures I used for persistence)
-- [ ] Improvements on the state management
+- [ ] Improvements on state management
+- [ ] Better error handling
+- [ ] Tests
 - [ ] CI/CD
 
 
