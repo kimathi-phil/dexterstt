@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "175703300928",
+    "project_id": "dexter-stt",
+    "storage_bucket": "dexter-stt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175703300928:android:c5e19f83bf22a1723378a5",
+        "android_client_info": {
+          "package_name": "com.bynarr.dexterstt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhr_AQJupBTve2eGWekeqOMUltKco8JZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
