@@ -1,0 +1,10 @@
+{
+    "@@locale": "en",
+    "notesTitle": "Always Listening",
+    "noteText1": "This app is always listening to you.",
+    "noteText2": "Every 10 seconds, we send that audio to our STT API.",
+    "noteText3": "The last 3 transcripts will be shown on the screen.",
+    "noteText4": "Additionally, we show a timer that indicates since when the app is listening.",
+    "counterText1": "API call counter",
+    "transcriptsTitle": "Last STT transcripts"
+}
